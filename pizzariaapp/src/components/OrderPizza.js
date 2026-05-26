@@ -34,18 +34,18 @@ function OrderPizza() {
     const addToCart = async (pizza) => {
 
         const token =
-        localStorage.getItem(
-            "token"
-        );
+            localStorage.getItem(
+                "token"
+            );
 
-        if(!token){
+        if (!token) {
 
             alert(
                 "🔒 Please login or create an account first"
             );
 
-            window.location.href=
-            "/login";
+            window.location.href =
+                "/login";
 
             return;
         }
@@ -61,9 +61,9 @@ function OrderPizza() {
                     quantity: 1,
 
                     userId:
-                    localStorage.getItem(
-                        "userId"
-                    )
+                        localStorage.getItem(
+                            "userId"
+                        )
                 }
             );
 
@@ -82,18 +82,18 @@ function OrderPizza() {
     const customizePizza = (pizza) => {
 
         const token =
-        localStorage.getItem(
-            "token"
-        );
+            localStorage.getItem(
+                "token"
+            );
 
-        if(!token){
+        if (!token) {
 
             alert(
                 "🔒 Please login or create an account first"
             );
 
-            window.location.href=
-            "/login";
+            window.location.href =
+                "/login";
 
             return;
         }
@@ -101,7 +101,7 @@ function OrderPizza() {
         navigate(
             "/build",
             {
-                state:pizza
+                state: pizza
             }
         );
 
@@ -127,11 +127,36 @@ function OrderPizza() {
 
                                     <div className="col-md-7">
 
-                                        <h2>
+                                        <div
+                                            className="d-flex align-items-center"
+                                        >
 
-                                            {pizza.name}
+                                            <h2 className="me-3">
 
-                                        </h2>
+                                                {pizza.name}
+
+                                            </h2>
+
+                                            <div
+                                                style={{
+
+                                                    width: "20px",
+                                                    height: "20px",
+
+                                                    backgroundColor:
+
+                                                        pizza.type === "veg"
+                                                            ?
+                                                            "green"
+                                                            :
+                                                            "red"
+
+                                                }}
+                                            >
+
+                                            </div>
+
+                                        </div>
 
                                         <p>
 
@@ -227,7 +252,7 @@ function OrderPizza() {
 
             <footer className="text-center mt-4 mb-3">
 
-                <small style={{color:"orange"}}>
+                <small style={{ color: "orange" }}>
 
                     Copyrights © 2026 Pizzeria.
                     All rights reserved.
