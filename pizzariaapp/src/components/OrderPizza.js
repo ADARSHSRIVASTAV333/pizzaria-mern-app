@@ -229,7 +229,7 @@ function OrderPizza() {
 
                 <small style={{color:"orange"}}>
 
-                    Copyrights © 2017 Pizzeria.
+                    Copyrights © 2026 Pizzeria.
                     All rights reserved.
 
                 </small>
