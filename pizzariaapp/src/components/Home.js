@@ -1,110 +1,301 @@
+import { Link } from "react-router-dom";
+
 function Home() {
 
-    return (
+return(
 
-        <div className="container mt-4">
+<div>
 
-            <h1 className="text-center mb-4">
-                Our Story
-            </h1>
+{/* HERO SECTION */}
 
-            <p className="text-center">
+<div
+className="container-fluid py-5"
+style={{
+background:
+"linear-gradient(to right,#ff9966,#ff5e62)"
+}}
+>
 
-                We believe in good food. We launched
-                Fresh Pan Pizza Best Excuse Awards on
-                our Facebook fan page. Fans were given
-                situations where they had to come up
-                with wacky and fun excuses.
+<div className="container">
 
-            </p>
+<div className="row align-items-center">
 
-            <div className="row mt-5 align-items-center">
+<div className="col-md-6">
 
-                <div className="col-md-6">
+<h1
+style={{
+fontSize:"55px",
+fontWeight:"bold",
+color:"white"
+}}
+>
 
-                    <img
-                        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
-                        alt="ingredients"
-                        className="img-fluid"
-                    />
+Delicious Pizza Delivered Fast 🍕
 
-                </div>
+</h1>
 
-                <div className="col-md-6">
+<p
+style={{
+fontSize:"18px",
+color:"white"
+}}
+>
 
-                    <h2>Ingredients</h2>
+Customize your favourite pizza and
+enjoy fresh ingredients delivered
+to your doorstep.
 
-                    <p>
+</p>
 
-                        We’re ruthless about goodness.
-                        We have no qualms about tearing
-                        up a day-old lettuce leaf.
+<Link
+to="/order"
+className="btn btn-warning me-3"
+>
 
-                    </p>
+Order Now
 
-                </div>
+</Link>
 
-            </div>
+<Link
+to="/build"
+className="btn btn-dark"
+>
 
-            <div className="row mt-5 align-items-center">
+Build Pizza
 
-                <div className="col-md-6">
+</Link>
 
-                    <h2>Our Chefs</h2>
+</div>
 
-                    <p>
+<div className="col-md-6 text-center">
 
-                        They make sauces sing and salads
-                        dance. They create magic with skill,
-                        knowledge, passion and stirring spoons.
+<img
+src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
+alt=""
+width="80%"
+style={{
 
-                    </p>
+borderRadius:"20px",
+boxShadow:
+"0px 5px 15px gray"
 
-                </div>
+}}
+/>
 
-                <div className="col-md-6">
+</div>
 
-                    <img
-                        src="https://images.unsplash.com/photo-1556910103-1c02745aae4d"
-                        alt="chef"
-                        className="img-fluid"
-                    />
+</div>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-            <div className="row mt-5 align-items-center">
 
-                <div className="col-md-6">
+{/* OUR STORY */}
 
-                    <img
-                        src="https://images.unsplash.com/photo-1501139083538-0139583c060f"
-                        alt="delivery"
-                        className="img-fluid"
-                    />
+<div className="container py-5">
 
-                </div>
+<div className="row align-items-center">
 
-                <div className="col-md-6">
+<div className="col-md-6">
 
-                    <h2>45 min delivery</h2>
+<img
+src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5"
+width="100%"
+alt=""
+style={{
 
-                </div>
+borderRadius:"20px"
 
-            </div>
+}}
+/>
 
-            <footer className="text-center mt-5 mb-3">
+</div>
 
-                <small>
-                    Copyright © 2026 Pizzaria.
-                    All rights reserved.
-                </small>
+<div className="col-md-6">
 
-            </footer>
+<h1>
 
-        </div>
-    );
+Our Story
+
+</h1>
+
+<p>
+
+We believe great pizza starts
+with fresh ingredients and
+passionate chefs. Every pizza
+is prepared with care and served
+with love.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+{/* INGREDIENTS */}
+
+<div
+className="container py-5"
+>
+
+<div className="row align-items-center">
+
+<div className="col-md-6">
+
+<h1>
+
+Fresh Ingredients
+
+</h1>
+
+<p>
+
+We carefully select vegetables,
+cheese and toppings to ensure
+every bite tastes delicious.
+
+</p>
+
+</div>
+
+<div className="col-md-6">
+
+<img
+src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+width="100%"
+alt=""
+style={{
+
+borderRadius:"20px"
+
+}}
+/>
+
+</div>
+
+</div>
+
+</div>
+
+
+{/* CHEFS */}
+
+<div
+className="container py-5"
+>
+
+<div className="row align-items-center">
+
+<div className="col-md-6">
+
+<img
+src="https://images.unsplash.com/photo-1556911220-bff31c812dba"
+width="100%"
+alt=""
+style={{
+
+borderRadius:"20px"
+
+}}
+/>
+
+</div>
+
+<div className="col-md-6">
+
+<h1>
+
+Our Chefs
+
+</h1>
+
+<p>
+
+Our experienced chefs prepare
+every pizza with passion and
+attention to detail.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+{/* DELIVERY */}
+
+<div
+className="container py-5"
+>
+
+<div className="row align-items-center">
+
+<div className="col-md-6">
+
+<h1>
+
+45 Minute Delivery ⏱️
+
+</h1>
+
+<p>
+
+Hot and fresh pizzas delivered
+straight to your door quickly
+and safely.
+
+</p>
+
+</div>
+
+<div className="col-md-6">
+
+<img
+src="https://images.unsplash.com/photo-1526367790999-0150786686a2"
+width="100%"
+alt=""
+style={{
+
+borderRadius:"20px"
+
+}}
+/>
+
+</div>
+
+</div>
+
+</div>
+
+<footer
+className="text-center py-4"
+>
+
+<small
+style={{
+color:"orange"
+}}
+>
+
+Copyright © 2026
+Pizzaria.
+All rights reserved.
+
+</small>
+
+</footer>
+
+</div>
+
+);
+
 }
 
 export default Home;
