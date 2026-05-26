@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Login() {
 
@@ -14,25 +15,20 @@ function Login() {
         try {
 
             const response =
-                await axios.post(
+            await axios.post(
 
-                    "http://localhost:5000/api/login",
+                "http://localhost:5000/api/login",
 
-                    {
+                {
+                    email,
+                    password
+                }
 
-                        email,
-                        password
-
-                    }
-
-                );
+            );
 
             localStorage.setItem(
-
                 "token",
-
                 response.data.token
-
             );
 
             localStorage.setItem(
@@ -41,96 +37,123 @@ function Login() {
             );
 
             localStorage.setItem(
-
                 "username",
-
                 response.data.username
-
             );
-
-            window.location.href = "/";
 
             alert(
-
                 "Login Successful"
-
             );
 
-            navigate("/");
-
+            window.location.href="/";
         }
 
-        catch (error) {
+        catch(error){
 
             alert(
-
                 "Invalid Login"
-
             );
 
         }
 
     };
 
-    return (
+    return(
 
-        <div className="container mt-5">
+<div
+className="container-fluid vh-100 d-flex justify-content-center align-items-center"
+style={{
 
-            <h2>
+background:
+"linear-gradient(to right,#ff9966,#ff5e62)"
 
-                Login
+}}
+>
 
-            </h2>
+<div
+className="card shadow-lg p-5"
+style={{
 
-            <input
+width:"420px",
+borderRadius:"20px"
 
-                className="form-control mb-3"
+}}
+>
 
-                placeholder="Email"
+<div className="text-center">
 
-                onChange={(e) =>
+<img
+src={logo}
+alt="logo"
+width="90"
+/>
 
-                    setEmail(
-                        e.target.value
-                    )
+<h2 className="mt-3">
 
-                }
+Welcome Back 🍕
 
-            />
+</h2>
 
-            <input
+<p>
 
-                type="password"
+Login to continue
 
-                className="form-control mb-3"
+</p>
 
-                placeholder="Password"
+</div>
 
-                onChange={(e) =>
+<input
+type="email"
+className="form-control mb-3"
+placeholder="Email"
 
-                    setPassword(
-                        e.target.value
-                    )
+onChange={(e)=>
+setEmail(
+e.target.value
+)}
+/>
 
-                }
+<input
+type="password"
+className="form-control mb-4"
+placeholder="Password"
 
-            />
+onChange={(e)=>
+setPassword(
+e.target.value
+)}
+/>
 
-            <button
+<button
+className="btn btn-warning w-100"
+onClick={loginUser}
+>
 
-                className="btn btn-primary"
+Login
 
-                onClick={loginUser}
+</button>
 
-            >
+<div
+className="text-center mt-3"
+>
 
-                Login
+Don't have an account? <br></br>
 
-            </button>
+<Link
+to="/register"
+>
 
-        </div>
+ Register
 
-    );
+</Link>
+
+</div>
+
+</div>
+
+</div>
+
+);
 
 }
 
